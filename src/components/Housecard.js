@@ -1,14 +1,14 @@
-import houses from "../assets/data.json"
+import { Link } from "react-router-dom"
 
-function Housecard() {
+function Housecard({id, cover, title}) {
     return (
-        <div style={{
-            display: "grid",
-              gridTemplateColumns: "1fr" ,
-              gap: "20px"
-        }}>
-            {houses.map((data) => (
-                <div key={data.id} className='card' style={{
+        <Link to={`/${id}`} >
+            <div style={{
+                display: "grid",
+                gridTemplateColumns: "1fr" ,
+                gap: "20px"
+            }}>
+                <div className='card' style={{
                     width: "100%",
                     height: "250px",
                     position: "relative",
@@ -30,7 +30,7 @@ function Housecard() {
                             backgroundColor: "rgba(0, 0, 0, 0.2)",
                         }}></div>
 
-                        <img src={data.cover} alt="liée à la maison en location" style={{
+                        <img src={cover} alt="liée à la maison en location" style={{
                             width: "100%",
                             height: "100%",
                             objectFit: "cover"
@@ -44,10 +44,10 @@ function Housecard() {
                         fontWeight: "bold",
                         maxWidth: "70%",
                         fontSize: "1em",
-                    }}>{data.title}</span>
+                    }}>{title}</span>
                 </div>   
-            ))}
-        </div>
+            </div>
+        </Link>
     )
 }
 

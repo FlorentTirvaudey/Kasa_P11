@@ -1,4 +1,4 @@
-function Tag () {
+function Tag (props) {
     return (
         <div style={{
             display: "flex",
@@ -13,11 +13,7 @@ function Tag () {
             borderRadius: "5px",
             fontSize: "0.8em"
         }}>
-            <p>
-                {
-                    // nom du tag ici
-                }
-            </p>
+            <p>{props.tag}</p>
         </div>
     )
 }

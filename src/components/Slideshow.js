@@ -1,11 +1,11 @@
-function Slideshow () {
+function Slideshow (props) {
     return (
-        <div className="box">
+        <div>
+            <i className="fa-solid fa-chevron-left"></i>
             <div className="boxImage">
-                <img src="" alt="" />
+                <img src={props.img} alt="" />
             </div>
-            <i></i>
-            <i></i>
+            <i className="fa-solid fa-chevron-right"></i>
         </div>
     )
 }

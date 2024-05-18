@@ -5,6 +5,7 @@ import './styles/index.css';
 import Home from './components/Home';
 import About from './components/About';
 import Page404 from './components/Page404';
+import Logement from './components/Logement';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -13,7 +14,8 @@ root.render(
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/404" element={<Page404 />} />
+        <Route path="/:id" element={<Logement />} />
+        <Route path="*" element={<Page404 />} />
       </Routes>
     </Router>
   </React.StrictMode>

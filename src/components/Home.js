@@ -3,6 +3,7 @@ import Navbar from "./Navbar.js"
 import Housecard from "./Housecard.js"
 import Footer from './Footer';
 import headerImage from "../assets/image_background_banner_accueil.png"
+import houses from "../assets/data.json"
 
 function Home() {
   return (
@@ -56,7 +57,9 @@ function Home() {
                   marginLeft: "10px"
               }}>Chez vous, partout et ailleurs</span>
           </div>
-          <Housecard />
+          {houses.map((data, id) => (
+            <Housecard key={id} id={data.id} cover={data.cover} title={data.title} />
+          ))}
       </div>
       <Footer />
     </div>

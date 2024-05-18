@@ -2,6 +2,7 @@ import Footer from "./Footer"
 import Navbar from "./Navbar"
 import Collapse from "./Collapse"
 
+import collapse from "../assets/collapse.json"
 import bannerImage from "../assets/banner_about.png"
 
 function About() {
@@ -44,7 +45,9 @@ function About() {
                     }}/>
                     </div>
                 </div>
-                <Collapse />
+                {collapse.map((data, id) => (
+                    <Collapse key={id} title={data.title} content={data.content} />
+                ))}
             </div>
             <Footer />
         </div>
