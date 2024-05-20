@@ -33,9 +33,7 @@ function Logement () {
             {res.map((data) => (
                     <div key={data.id} className="infos">
                         <div className="box">
-                            {data.pictures.map((picture) => (
-                                <Slideshow key={picture} img={picture} />
-                            ))}
+                            <Slideshow pictures={data.pictures} />
                         </div>
                         <div className="titles">
                             <h1>{data.title}</h1>
