@@ -1,4 +1,13 @@
+import { useState } from "react";
+
 function Collapse(props) {
+
+    const [isIconChange, setIsIconChange] = useState(true);
+
+    const changeIcon = () => {
+        setIsIconChange(!isIconChange);
+    }
+
     return (
         <div style={{
             display: "grid",
@@ -21,12 +30,14 @@ function Collapse(props) {
                         <p style={{
                             fontWeight: "bold"
                         }}>{props.title}</p>
-                        <i className="fa-solid fa-chevron-up" style={{
-                            cursor: "pointer"
-                        }}></i>
+                        <span onClick={changeIcon}>
+                            <i id="icon" className={`fa-solid ${isIconChange ? "fa-chevron-up" : "fa-chevron-down"}`} style={{
+                                cursor: "pointer"
+                            }}></i>
+                        </span>
                     </div>
                     <div style={{
-                        display: "block",
+                        display: isIconChange ? "none" : "block",
                         padding: "10px"
                     }}>
                         <p>{props.content}</p>

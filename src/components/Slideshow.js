@@ -2,13 +2,20 @@ import { useState } from "react"
 
 function Slideshow ({ pictures }) {
     const [actualImg, setActualImg] = useState(0)
-    console.log(pictures)
 
+    const nextImg = () => {
+        setActualImg(actualImg === pictures.length - 1 ? 0 : actualImg + 1)
+    }
 
+    const previousImg = () => {
+        setActualImg(actualImg === 0 ? pictures.length - 1 : actualImg - 1)
+    }
 
     return (
         <div>
-            <i className="fa-solid fa-chevron-left"></i>
+            <span onClick={previousImg}>
+                <i id="previous_chevron" className="fa-solid fa-chevron-left"></i>
+            </span>
 
             {pictures.map((img, index) => (
                 <div key={index} className="boxImage">
@@ -21,7 +28,9 @@ function Slideshow ({ pictures }) {
                 </div>
             ))}
 
-            <i className="fa-solid fa-chevron-right"></i>
+            <span onClick={nextImg}>
+                <i id="next_chevron" className="fa-solid fa-chevron-right"></i>
+            </span>
         </div>
     )
 }
