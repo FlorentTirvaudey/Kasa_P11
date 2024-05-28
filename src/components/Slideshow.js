@@ -12,23 +12,65 @@ function Slideshow ({ pictures }) {
     }
 
     return (
-        <div>
-            <span onClick={previousImg}>
-                <i id="previous_chevron" className="fa-solid fa-chevron-left"></i>
-            </span>
+        <div className="box" style={{
+            display: "flex",
+            position: "relative",
+            width: "90%",
+            height: "250px",
+            margin: "20px auto",
+            overflow: "hidden",
+            borderRadius: "10px"
+        }}>
 
             {pictures.map((img, index) => (
-                <div key={index} className="boxImage">
+                <div key={index} className="boxImage" style={{
+                    height: "100%",
+                    width: "100%",
+                    position: "absolute",
+                    top: "0",
+                    left: "0",
+                    right: "0",
+                    bottom: "0",
+                    overflow: "hidden"
+                }}>
                     {actualImg === index && (
-                        <img src={img} alt="" />
+                        <img src={img} alt="" style={{
+                            position: "absolute",
+                            top: "0",
+                            left: "0",
+                            right: "0",
+                            bottom: "0",
+                            height: "100%",
+                            width: "100%",
+                            objectFit: "cover"
+                        }}/>
                     )}
                     {actualImg === index && (
-                        <span>{actualImg + 1}/{pictures.length}</span>
+                        <span style={{
+                            position: "absolute",
+                            bottom: "10px",
+                            left: "50%",
+                            color: "white",
+                            fontWeight: "bold"
+                        }}>{actualImg + 1}/{pictures.length}</span>
                     )}
                 </div>
             ))}
 
-            <span onClick={nextImg}>
+            <span onClick={previousImg} style={{
+                position: "absolute",
+                top: "50%",
+                left: "20px",
+                color: "white"
+            }} >
+                <i id="previous_chevron" className="fa-solid fa-chevron-left"></i>
+            </span>
+            <span onClick={nextImg} style={{
+                position: "absolute",
+                top: "50%",
+                right: "20px",
+                color: "white"
+            }}>
                 <i id="next_chevron" className="fa-solid fa-chevron-right"></i>
             </span>
         </div>

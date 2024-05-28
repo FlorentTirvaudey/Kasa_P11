@@ -32,9 +32,7 @@ function Logement () {
             <Navbar />
             {res.map((data) => (
                     <div key={data.id} className="infos">
-                        <div className="box">
-                            <Slideshow pictures={data.pictures} />
-                        </div>
+                        <Slideshow pictures={data.pictures} />
                         <div className="titles">
                             <h1>{data.title}</h1>
                             <h3>{data.location}</h3>
