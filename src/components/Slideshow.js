@@ -15,9 +15,8 @@ function Slideshow ({ pictures }) {
         <div className="box" style={{
             display: "flex",
             position: "relative",
-            width: "90%",
+            width: "100%",
             height: "250px",
-            margin: "20px auto",
             overflow: "hidden",
             borderRadius: "10px"
         }}>
@@ -51,7 +50,8 @@ function Slideshow ({ pictures }) {
                             bottom: "10px",
                             left: "50%",
                             color: "white",
-                            fontWeight: "bold"
+                            fontWeight: "bold",
+                            display: "none" // on ne l'affiche pas pour la version mobile
                         }}>{actualImg + 1}/{pictures.length}</span>
                     )}
                 </div>
@@ -61,7 +61,8 @@ function Slideshow ({ pictures }) {
                 position: "absolute",
                 top: "50%",
                 left: "20px",
-                color: "white"
+                color: "white",
+                fontSize: "1.5em"
             }} >
                 <i id="previous_chevron" className="fa-solid fa-chevron-left"></i>
             </span>
@@ -69,7 +70,8 @@ function Slideshow ({ pictures }) {
                 position: "absolute",
                 top: "50%",
                 right: "20px",
-                color: "white"
+                color: "white",
+                fontSize: "1.5em"
             }}>
                 <i id="next_chevron" className="fa-solid fa-chevron-right"></i>
             </span>

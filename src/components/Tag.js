@@ -5,13 +5,14 @@ function Tag (props) {
             textAlign: "center",
             alignItems: "center",
             justifyContent: "center",
-            width: "100px",
-            height: "25px",
+            width: "120px",
+            height: "15px",
+            padding: "2px",
             backgroundColor: "#FF6060",
             color: "white",
             fontWeight: "bold",
             borderRadius: "5px",
-            fontSize: "0.8em"
+            fontSize: "0.7em"
         }}>
             <p>{props.tag}</p>
         </div>
