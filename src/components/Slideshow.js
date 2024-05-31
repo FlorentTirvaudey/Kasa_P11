@@ -1,3 +1,5 @@
+import "../styles/Slideshow.css"
+
 import { useState } from "react"
 
 function Slideshow ({ pictures }) {
@@ -12,67 +14,23 @@ function Slideshow ({ pictures }) {
     }
 
     return (
-        <div className="box" style={{
-            display: "flex",
-            position: "relative",
-            width: "100%",
-            height: "250px",
-            overflow: "hidden",
-            borderRadius: "10px"
-        }}>
+        <div className="box">
 
             {pictures.map((img, index) => (
-                <div key={index} className="boxImage" style={{
-                    height: "100%",
-                    width: "100%",
-                    position: "absolute",
-                    top: "0",
-                    left: "0",
-                    right: "0",
-                    bottom: "0",
-                    overflow: "hidden"
-                }}>
+                <div key={index} className="box_image">
                     {actualImg === index && (
-                        <img src={img} alt="" style={{
-                            position: "absolute",
-                            top: "0",
-                            left: "0",
-                            right: "0",
-                            bottom: "0",
-                            height: "100%",
-                            width: "100%",
-                            objectFit: "cover"
-                        }}/>
+                        <img src={img} alt="aperçu bien à louer"/>
                     )}
                     {actualImg === index && (
-                        <span style={{
-                            position: "absolute",
-                            bottom: "10px",
-                            left: "50%",
-                            color: "white",
-                            fontWeight: "bold",
-                            display: "none" // on ne l'affiche pas pour la version mobile
-                        }}>{actualImg + 1}/{pictures.length}</span>
+                        <span>{actualImg + 1}/{pictures.length}</span>
                     )}
                 </div>
             ))}
 
-            <span onClick={previousImg} style={{
-                position: "absolute",
-                top: "50%",
-                left: "20px",
-                color: "white",
-                fontSize: "1.5em"
-            }} >
+            <span className='previous_chevron' onClick={previousImg}>
                 <i id="previous_chevron" className="fa-solid fa-chevron-left"></i>
             </span>
-            <span onClick={nextImg} style={{
-                position: "absolute",
-                top: "50%",
-                right: "20px",
-                color: "white",
-                fontSize: "1.5em"
-            }}>
+            <span className='next_chevron' onClick={nextImg}>
                 <i id="next_chevron" className="fa-solid fa-chevron-right"></i>
             </span>
         </div>

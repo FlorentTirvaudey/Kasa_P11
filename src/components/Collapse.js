@@ -1,3 +1,5 @@
+import "../styles/Collapse.css"
+
 import { useState } from "react";
 
 function Collapse(props) {
@@ -9,41 +11,19 @@ function Collapse(props) {
     }
 
     return (
-        <div style={{
-            display: "grid",
-            gridTemplateColumns: "1fr" ,
-            gap: "20px"
-        }}>
-            <div style={{
-                width: "100%"
-            }}>
-                    <div style={{
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "space-between",
-                        backgroundColor: "#FF6060",
-                        color: "white",
-                        padding: "0px 10px",
-                        borderRadius: "5px",
-                        height: "30px"
-                    }}>
-                        <p style={{
-                            fontWeight: "bold"
-                        }}>{props.title}</p>
+            <div className='collapse'>
+                    <div className='collapse_bloc'>
+                        <p>{props.title}</p>
                         <span onClick={changeIcon}>
-                            <i id="icon" className={`fa-solid ${isIconChange ? "fa-chevron-up" : "fa-chevron-down"}`} style={{
-                                cursor: "pointer"
-                            }}></i>
+                            <i id="icon" className={`fa-solid ${isIconChange ? "fa-chevron-up" : "fa-chevron-down"}`}></i>
                         </span>
                     </div>
-                    <div style={{
+                    <div className='collapse_content' style={{
                         display: isIconChange ? "none" : "block",
-                        padding: "10px"
                     }}>
                         <p>{props.content}</p>
                     </div>
             </div>
-        </div>
     )
 }
 

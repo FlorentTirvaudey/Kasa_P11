@@ -1,0 +1,26 @@
+.collapse {
+    width: 100%;
+}
+
+.collapse_bloc {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #FF6060;
+    color: white;
+    padding: 0px 10px;
+    border-radius: 5px;
+    height: 30px;
+}
+
+.collapse_bloc p {
+    font-weight: bold;
+}
+
+.collapse_bloc i {
+    cursor: pointer;
+}
+
+.collapse_content p {
+    margin: 10px;
+}

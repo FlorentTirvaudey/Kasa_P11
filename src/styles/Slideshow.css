@@ -1,0 +1,56 @@
+.box {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.box_image {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+
+.box_image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.box_image span {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    color: white;
+    font-weight: bold;
+
+    display: none;
+}
+
+.previous_chevron {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    color: white;
+    font-size: 1.5em;
+}
+
+.next_chevron {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    color: white;
+    font-size: 1.5em;
+}

@@ -1,0 +1,14 @@
+.tags_bloc {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 15px;
+    padding: 2px;
+    background-color: #FF6060;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    font-size: 0.7em;
+}

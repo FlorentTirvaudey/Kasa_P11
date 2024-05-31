@@ -1,0 +1,6 @@
+.stars_disposition {
+    display: flex;
+    flex-direction: row;
+    gap: 3px;
+    color: #FF6060;
+}
