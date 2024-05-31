@@ -33,23 +33,27 @@ function Logement () {
                 {res.map((data) => (
                         <div key={data.id} className="infos">
                             <Slideshow pictures={data.pictures} />
-                            <div className="titles">
-                                <h1>{data.title}</h1>
-                                <h2>{data.location}</h2>
-                            </div>
-                            <div className="tags">
-                                {data.tags.map((tags) => (
-                                    <Tag key={tags} tag={tags} />
-                                ))}
-                            </div>
-                            <div className="user_infos">
-                                <div className="stars" >
-                                    <Rate rating={data.rating} />
+                            <div className="logement_content">
+                                <div className="titles_part">
+                                    <div className="titles">
+                                        <h1>{data.title}</h1>
+                                        <h2>{data.location}</h2>
+                                    </div>
+                                    <div className="tags">
+                                        {data.tags.map((tags) => (
+                                            <Tag key={tags} tag={tags} />
+                                        ))}
+                                    </div>
                                 </div>
-                                <div className="name_profil">
-                                    <p>{data.host.name}</p>
-                                    <div className="image_circle">
-                                        <img src={data.host.picture} alt="visage profil de l'hôte" />
+                                <div className="user_infos">
+                                    <div className="stars" >
+                                        <Rate rating={data.rating} />
+                                    </div>
+                                    <div className="name_profil">
+                                        <p>{data.host.name}</p>
+                                        <div className="image_circle">
+                                            <img src={data.host.picture} alt="visage profil de l'hôte" />
+                                        </div>
                                     </div>
                                 </div>
                             </div>

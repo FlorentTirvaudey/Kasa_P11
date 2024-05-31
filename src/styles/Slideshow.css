@@ -30,12 +30,6 @@
 }
 
 .box_image span {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    color: white;
-    font-weight: bold;
-
     display: none;
 }
 
@@ -45,6 +39,7 @@
     left: 20px;
     color: white;
     font-size: 1.5em;
+    cursor: pointer;
 }
 
 .next_chevron {
@@ -53,4 +48,29 @@
     right: 20px;
     color: white;
     font-size: 1.5em;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 1025px) {
+    .box {
+        height: 550px;
+    }
+
+    .box_image span {
+        display: block;
+        position: absolute;
+        bottom: 50px;
+        left: 50%;
+        color: white;
+        font-weight: bold;
+        font-size: 1.5em;
+    }
+
+    .previous_chevron {
+        font-size: 6.0em;
+    }
+
+    .next_chevron {
+        font-size: 6.0em;
+    }
 }

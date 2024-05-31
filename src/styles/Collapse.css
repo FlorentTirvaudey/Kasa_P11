@@ -27,7 +27,8 @@
 
 @media screen and (min-width: 1025px) {
     .collapse_bloc {
-        height: 50px;
+        height: 60px;
+        border-radius: 10px;
     }
 
     .collapse_bloc p {

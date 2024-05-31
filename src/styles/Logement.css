@@ -3,10 +3,22 @@
     flex-direction: column;
 }
 
+.logement_content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
 .infos {
     display: flex;
     flex-direction: column;
     gap: 15px;
+}
+
+.titles_part {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .titles {
@@ -19,11 +31,13 @@
     color: #FF6060;
     font-size: 1.3em;
     font-weight: normal;
+    font-weight: 500;
 }
 
 .titles h2 {
     font-size: 0.9em;
     font-weight: normal;
+    font-weight: 500;
 }
 
 .tags {
@@ -68,4 +82,47 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
+
+@media screen and (min-width: 1025px) {
+    .infos {
+        gap: 30px;
+    }
+
+    .logement_content {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .titles_part {
+        gap: 25px;
+    }
+
+    .titles h1 {
+        font-size: 2.5em;
+    }
+
+    .titles h2 {
+        font-size: 1.4em;
+    }
+
+    .user_infos {
+        flex-direction: column-reverse;
+        gap: 30px;
+    }
+
+    .name_profil p {
+        max-width: 120px;
+        font-size: 1.6em;
+    }
+
+    .image_circle {
+        width: 90px;
+        height: 90px;
+    }
+
+    .dropdowns {
+        flex-direction: row;
+        gap: 60px;
+    }
 }
