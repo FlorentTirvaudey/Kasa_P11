@@ -24,3 +24,18 @@
 .collapse_content p {
     margin: 10px;
 }
+
+@media screen and (min-width: 1025px) {
+    .collapse_bloc {
+        height: 50px;
+    }
+
+    .collapse_bloc p {
+        font-size: 1.2em;
+    }
+
+    .collapse_bloc i {
+        font-size: 1.4em;
+        padding-right: 10px;
+    }
+}

@@ -1,3 +1,27 @@
 .overlay_about {
     background-color: rgba(0, 0, 0, 0.2);
 }
+
+.collapse_about {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.banner_collapse_bloc {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+@media screen and (min-width: 1025px) {
+    .collapse_about {
+        margin: 0px 100px;  
+        gap: 30px;
+    }
+
+    .banner_collapse_bloc {
+        gap: 40px;
+        margin: 0px 100px;
+    }
+}

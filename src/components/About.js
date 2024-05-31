@@ -11,16 +11,20 @@ function About() {
         <div>
             <section className='body_accueil'>
                 <Navbar />
+                <div className="banner_collapse_bloc">
                     <div className='banner_bloc'>
                         <div className='banner'>
                             <div className='overlay overlay_about'></div>
 
                             <img src={bannerImage} alt="background bloc accueil"/>
                         </div>
+                    </div>
+                    <div className="collapse_about">
+                        {collapse.map((data, id) => (
+                            <Collapse key={id} title={data.title} content={data.content} />
+                        ))}
+                    </div>
                 </div>
-                {collapse.map((data, id) => (
-                    <Collapse key={id} title={data.title} content={data.content} />
-                ))}
             </section>
             <Footer />
         </div>
