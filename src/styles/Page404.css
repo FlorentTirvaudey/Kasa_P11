@@ -24,3 +24,18 @@
     margin: auto;
     cursor: pointer;
 }
+
+@media screen and (min-width: 1025px) {
+    .block_404 h1 {
+        font-size: 15em;
+    }
+
+    .block_404 p {
+        max-width: 100%;
+        font-size: 2.5em;
+    }
+
+    .back_home {
+        font-size: 1.0em;
+    }
+}
