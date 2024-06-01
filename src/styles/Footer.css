@@ -13,6 +13,7 @@
 
 .footer img {
     width: 100px;
+    filter: invert(100%) saturate(0%) hue-rotate(197deg) brightness(107%) contrast(280%);
 }
 
 .footer p {
