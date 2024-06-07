@@ -21,7 +21,7 @@
     cursor: pointer;
 }
 
-.collapse_content p {
+.collapse_content p, .collapse_content ul {
     margin: 10px;
 }
 

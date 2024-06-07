@@ -21,7 +21,7 @@ function Collapse(props) {
                     <div className='collapse_content' style={{
                         display: isIconChange ? "none" : "block",
                     }}>
-                        <p>{props.content}</p>
+                        {props.content}
                     </div>
             </div>
     )

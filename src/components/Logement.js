@@ -8,9 +8,14 @@ import houses from "../assets/data.json"
 import Tag from "./Tag"
 import Slideshow from "./Slideshow"
 import Rate from "./Rate"
+import Page404 from "./Page404"
 
 function Logement () {
     const params = useParams()
+
+    const houseId = params.id
+
+    const isIdInData = houses.find(data => data.id === houseId)
 
     const res = [] 
     // eslint-disable-next-line array-callback-return
@@ -21,50 +26,60 @@ function Logement () {
     })
 
     const listCollapse = res.map((data) => (
-        data.equipments.map((equip) => (
-            <li className='equipment_list' key={equip}>{equip}</li>
-        ))
+        <ul>
+            {
+                data.equipments.map((equip) => (
+                        <li className='equipment_list' key={equip}>{equip}</li>
+                ))
+            }
+        </ul>
     ))
 
     return (
         <div>
-            <section className='body_accueil'>
-                <Navbar />
-                {res.map((data) => (
-                        <div key={data.id} className="infos">
-                            <Slideshow pictures={data.pictures} />
-                            <div className="logement_content">
-                                <div className="titles_part">
-                                    <div className="titles">
-                                        <h1>{data.title}</h1>
-                                        <h2>{data.location}</h2>
-                                    </div>
-                                    <div className="tags">
-                                        {data.tags.map((tags) => (
-                                            <Tag key={tags} tag={tags} />
-                                        ))}
-                                    </div>
-                                </div>
-                                <div className="user_infos">
-                                    <div className="stars" >
-                                        <Rate rating={data.rating} />
-                                    </div>
-                                    <div className="name_profil">
-                                        <p>{data.host.name}</p>
-                                        <div className="image_circle">
-                                            <img src={data.host.picture} alt="visage profil de l'hôte" />
+            {isIdInData ? (
+                <div>
+                    <section className='body_accueil'>
+                        <Navbar />
+                        {res.map((data) => (
+                                <div key={data.id} className="infos">
+                                    <Slideshow pictures={data.pictures} />
+                                    <div className="logement_content">
+                                        <div className="titles_part">
+                                            <div className="titles">
+                                                <h1>{data.title}</h1>
+                                                <h2>{data.location}</h2>
+                                            </div>
+                                            <div className="tags">
+                                                {data.tags.map((tags) => (
+                                                    <Tag key={tags} tag={tags} />
+                                                ))}
+                                            </div>
+                                        </div>
+                                        <div className="user_infos">
+                                            <div className="stars" >
+                                                <Rate rating={data.rating} />
+                                            </div>
+                                            <div className="name_profil">
+                                                <p>{data.host.name}</p>
+                                                <div className="image_circle">
+                                                    <img src={data.host.picture} alt="visage profil de l'hôte" />
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
+                                    <div className="dropdowns">
+                                        <Collapse key={data.description} title="Description" content={<p>{data.description}</p>} />
+                                        <Collapse key={data.equipments} title="Equipements" content={listCollapse} />
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="dropdowns">
-                                <Collapse key={data.description} title="Description" content={data.description} />
-                                <Collapse key={data.equipments} title="Equipements" content={listCollapse} />
-                            </div>
-                        </div>
-                ))}
-                </section>
-            <Footer />
+                        ))}
+                        </section>
+                    <Footer />
+                </div>
+            ) : (
+                <Page404 />
+            )}
         </div>
     )
 }

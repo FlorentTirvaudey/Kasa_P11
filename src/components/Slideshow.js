@@ -15,24 +15,38 @@ function Slideshow ({ pictures }) {
 
     return (
         <div className="box">
-
-            {pictures.map((img, index) => (
-                <div key={index} className="box_image">
-                    {actualImg === index && (
-                        <img src={img} alt="aperçu bien à louer"/>
-                    )}
-                    {actualImg === index && (
-                        <span>{actualImg + 1}/{pictures.length}</span>
-                    )}
+            {pictures.length === 1 ? (
+                <div>
+                    {pictures.map((img, index) => (
+                        <div key={img} className="box_image">
+                            {actualImg === index && (
+                                <img src={img} alt="aperçu bien à louer"/>
+                            )}
+                        </div>
+                    ))}
                 </div>
-            ))}
+            ) : (
+                <div>
+                    {pictures.map((img, index) => (
+                        <div key={img} className="box_image">
+                            {actualImg === index && (
+                                <img src={img} alt="aperçu bien à louer"/>
+                            )}
+                            {actualImg === index && (
+                                <span>{actualImg + 1}/{pictures.length}</span>
+                            )}
+                        </div>
+                    ))}
 
-            <span className='previous_chevron' onClick={previousImg}>
-                <i id="previous_chevron" className="fa-solid fa-chevron-left"></i>
-            </span>
-            <span className='next_chevron' onClick={nextImg}>
-                <i id="next_chevron" className="fa-solid fa-chevron-right"></i>
-            </span>
+                    <span className='previous_chevron' onClick={previousImg}>
+                        <i id="previous_chevron" className="fa-solid fa-chevron-left"></i>
+                    </span>
+                    <span className='next_chevron' onClick={nextImg}>
+                        <i id="next_chevron" className="fa-solid fa-chevron-right"></i>
+                    </span>
+                </div>
+            )}
+
         </div>
     )
 }

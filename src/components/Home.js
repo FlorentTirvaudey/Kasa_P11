@@ -20,8 +20,8 @@ function Home() {
                 <span className='banner_text'>Chez vous, partout et ailleurs</span>
           </div>
           <div className='housecard_bloc'>
-            {houses.map((data, id) => (
-              <Housecard key={id} id={data.id} cover={data.cover} title={data.title} />
+            {houses.map((data) => (
+              <Housecard key={data.id} id={data.id} cover={data.cover} title={data.title} />
             ))}
           </div>
         </div>
